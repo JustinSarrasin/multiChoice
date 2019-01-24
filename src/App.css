@@ -3,8 +3,8 @@ body {
 }
 
 .mainContainer {
-  width: 80%;
-  margin: 0 auto;
+  width: 95%;
+  margin: 25px auto;
 }
 
 .wrapper {
@@ -16,43 +16,126 @@ body {
 
 .left, .questionCard {
   background-color: white;
-  width: 100%;
+  width: 49%;
+    border-radius: 5px;
+
 }
 
 .right, .answerDisplay {
-  width: 100%;
+  width: 49%;
+}
+
+::placeholder {
+  /* padding: 10px; */
+  font-size: 15px;
+}
+
+input {
+  padding: 10px;
 }
 
 .formCard {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.formCard input, .questionHeader input, .addOption input {
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
 }
 
 h3, p{
   margin: 0;
 }
 
+/* h3 {
+  font-size: 2.5rem;
+} */
+
 .questionHeader {
   display: flex;
   flex-direction: column;
-}
-
-.questionCard {
-  display: flex;
-  flex-direction: column;
+  margin: 20px;
 }
 
 .addOption {
   display: flex;
   flex-direction: column;
+  margin: -20px 20px 20px;
+}
+
+/* .questionHeader input, .addOption input {
+  margin: 5px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+} */
+
+.questionCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+/* .addOption {
+  display: flex;
+  flex-direction: column;
+} */
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 .addRemove {
   display: flex;
+  /* margin: 5px; */
+}
+
+.addRemove button {
+  border-radius: 5px;
+  margin: 5px;
 }
 
 .addQuestion {
   width: 50%;
+}
+
+.add, .addQuestion {
+  width: 150px;
+  background-color: #39cc45;
+  color: white;
+}
+
+.add:hover, .addQuestion:hover {
+  background-color: #25882d;
+}
+
+.delete {
+  width: 150px;
+  background-color: #d83f25;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #7a2314;
+}
+
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 

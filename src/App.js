@@ -40,7 +40,7 @@ class App extends Component {
       <div className="mainContainer">
         <div className="wrapper">
           <div className="left">
-            <form action="" className="formCard" onChange={this.handleFormSubmit}>
+            <form action="" className="formCard" onChange={this.handleFormSubmit} autoComplete="off">
               <input type="text" onChange={this.handleTitleChange} name="formTitle" placeholder="Title" className="inputTitle"/>
               <input type="text" onChange={this.handleTitleChange} name="formDesc" placeholder="Form Description" className="inputFormDesc"/>
             </form>
@@ -58,7 +58,6 @@ class App extends Component {
         </div>
         <button className="addQuestion" onClick={this.newQuestion}>Add Question</button>
       </div>
-      
     );
   }
 }

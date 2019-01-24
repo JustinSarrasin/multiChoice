@@ -48,21 +48,25 @@ export default class Question extends React.Component{
     return(
       <div className="wrapper">
         <div className="questionCard">
-          <form className="questionHeader">
+          <form className="questionHeader" autoComplete="off">
             <input type="text" placeholder="Question" onChange={this.handleTitleChange} name="answerTitle"/>
             <input type="text" placeholder="Question Description" onChange={this.handleTitleChange} name="answerDesc"/>
           </form>
             {this.state.answer.map((a, index) => {
               return <ul>
-                       <li key={index}>{a.value}</li>
-                       <button onClick={(e) => this.removeAnswer(a.value)}></button>
+                       <div className="option">
+                         <li key={index}>{a.value}</li>
+                          <button onClick={(e) => this.removeAnswer(a.value)}>
+                            <i class="fas fa-trash"></i>
+                          </button>
+                       </div>
                      </ul>
             })}
-          <form className="addOption" onSubmit={this.handleFormSubmit}>
+          <form className="addOption" onSubmit={this.handleFormSubmit} autoComplete="off">
             <input type="text" placeholder="Add Option" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption} />
             <div className="addRemove"> 
-              <input type="submit" value="Add Option" />
-              <input type="submit" value="Delete Question" />
+              <button type="submit" className="add">ADD OPTION</button>
+              <button type="submit" className="delete">DELETE QUESTION</button>
             </div>
           </form>
         </div>
