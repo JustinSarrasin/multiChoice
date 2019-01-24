@@ -1,3 +1,65 @@
+body {
+  background-color: lightgray;
+}
+
+.mainContainer {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  /* width: 90%; */
+  /* margin: 50px auto; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.left, .questionCard {
+  background-color: white;
+  width: 100%;
+}
+
+.right, .answerDisplay {
+  width: 100%;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+}
+
+h3, p{
+  margin: 0;
+}
+
+.questionHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.questionCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.addOption {
+  display: flex;
+  flex-direction: column;
+}
+
+.addRemove {
+  display: flex;
+}
+
+.addQuestion {
+  width: 50%;
+}
+
+
+
+
+
+
 /* .App {
   text-align: center;
 }
@@ -30,3 +92,5 @@
     transform: rotate(360deg);
   }
 } */
+
+

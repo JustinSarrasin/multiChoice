@@ -46,36 +46,38 @@ export default class Question extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className="wrapper">
         <div className="questionCard">
-          <form onSubmit={this.handleFormSubmit}>
-            <input type="text" placeholder="question" onChange={this.handleTitleChange} name="answerTitle"/>
-            <input type="text" placeholder="question" onChange={this.handleTitleChange} name="answerDesc"/>
-            <input type="text" placeholder="question description" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption}/>
-            <input type="submit" value="Add Option"/>
-
-            
-            {/* <Answers titleChange={this.props.answerTitle}  /> */}
-         </form>
+          <form className="questionHeader">
+            <input type="text" placeholder="Question" onChange={this.handleTitleChange} name="answerTitle"/>
+            <input type="text" placeholder="Question Description" onChange={this.handleTitleChange} name="answerDesc"/>
+          </form>
             {this.state.answer.map((a, index) => {
               return <ul>
-                <li key={index}>{a.value}</li>
-                <button onClick={(e) => this.removeAnswer(a.value)}></button>
-              </ul>
+                       <li key={index}>{a.value}</li>
+                       <button onClick={(e) => this.removeAnswer(a.value)}></button>
+                     </ul>
             })}
+          <form className="addOption" onSubmit={this.handleFormSubmit}>
+            <input type="text" placeholder="Add Option" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption} />
+            <div className="addRemove">
+              <input type="submit" value="Add Option" />
+              <input type="submit" value="Delete Question" />
+            </div>
+          </form>
         </div>
   
 
-          <div>
-            <h3>{this.state.answerTitle}</h3>
-            <p>{this.state.answerDesc}</p>
-            {this.state.answer.map((a, index) => {
-              return <ul>
-                <li key={index}>{a.value}</li>
-              </ul>
-            })}
+        <div className="answerDisplay">
+          <h3>{this.state.answerTitle}</h3>
+          <p>{this.state.answerDesc}</p>
+          {this.state.answer.map((a, index) => {
+            return <ul>
+              <li key={index}>{a.value}</li>
+            </ul>
+          })}
 
-          </div>
+        </div>
       </div>
     )
   }

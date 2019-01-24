@@ -37,25 +37,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="left">
-          <form action="" className="formCard" onChange={this.handleFormSubmit}>
-            <input type="text" onChange={this.handleTitleChange} name="formTitle" placeholder="Title" className="inputTitle"/>
-            <input type="text" onChange={this.handleTitleChange} name="formDesc" placeholder="Form Description" className="inputFormDesc"/>
-          </form>
-          <div className="question">
-            {this.state.question.map((q, index) => {
-              return <Question question={q} change={this.handleTitleChange} answer={this.state.answerTitle} key={index} />
-            })}
+      <div className="mainContainer">
+        <div className="wrapper">
+          <div className="left">
+            <form action="" className="formCard" onChange={this.handleFormSubmit}>
+              <input type="text" onChange={this.handleTitleChange} name="formTitle" placeholder="Title" className="inputTitle"/>
+              <input type="text" onChange={this.handleTitleChange} name="formDesc" placeholder="Form Description" className="inputFormDesc"/>
+            </form>
           </div>
-          <button onClick={this.newQuestion}>Add Question</button>
+  
+          <div className="right">
+            <h3 className="title">{this.state.formTitle}</h3>
+            <p className="formDesc">{this.state.formDesc}</p>
+          </div>
         </div>
-
-        <div className="right">
-          <h3 className="title">{this.state.formTitle}</h3>
-          <p className="formDesc">{this.state.formDesc}</p>
+        <div className="question">
+          {this.state.question.map((q, index) => {
+            return <Question question={q} change={this.handleTitleChange} answer={this.state.answerTitle} key={index} />
+          })}
         </div>
-        
+        <button className="addQuestion" onClick={this.newQuestion}>Add Question</button>
       </div>
     );
   }
