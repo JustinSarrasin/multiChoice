@@ -60,7 +60,7 @@ export default class Question extends React.Component{
             })}
           <form className="addOption" onSubmit={this.handleFormSubmit}>
             <input type="text" placeholder="Add Option" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption} />
-            <div className="addRemove">
+            <div className="addRemove"> 
               <input type="submit" value="Add Option" />
               <input type="submit" value="Delete Question" />
             </div>

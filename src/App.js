@@ -58,6 +58,7 @@ class App extends Component {
         </div>
         <button className="addQuestion" onClick={this.newQuestion}>Add Question</button>
       </div>
+      
     );
   }
 }
