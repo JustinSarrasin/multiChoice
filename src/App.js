@@ -20,7 +20,8 @@ class App extends Component {
     this.setState({
       [e.target.name]: e.target.value,      
     })
-  }
+  } 
+  
 
   newQuestion = (e) => {
     e.preventDefault();

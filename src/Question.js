@@ -12,6 +12,7 @@ export default class Question extends React.Component{
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
+  
 
   handleFormSubmit = (e) => {
     e.preventDefault();
