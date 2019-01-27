@@ -1,5 +1,5 @@
 body {
-  background-color: lightgray;
+  background-color: rgb(235, 235, 235);
 }
 
 .mainContainer {
@@ -25,6 +25,10 @@ body {
   width: 49%;
 }
 
+.right p {
+  margin-top: 20px;
+}
+
 ::placeholder {
   /* padding: 10px; */
   font-size: 15px;
@@ -47,9 +51,24 @@ input {
   border: 1px solid lightgray;
 }
 
-h3, p{
-  margin: 0;
+
+
+h3, h4 {
+  margin: 10px;
+  font-size: 30px;
 }
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  margin: 10px;
+  color: rgb(116, 116, 116);
+
+  
+}
+
 
 /* h3 {
   font-size: 2.5rem;
@@ -84,11 +103,23 @@ h3, p{
   flex-direction: column;
 } */
 
+.optionList {
+  margin-bottom: 25px;
+}
+
 .option {
   display: flex;
   justify-content: space-between;
   margin: 0 25px;
 }
+
+/* .option li {
+  margin: -10px 0;
+} */
+
+.option i:hover {
+  transform: rotate(-45deg);
+} 
 
 button {
   background-color: transparent;
@@ -102,11 +133,17 @@ button {
 
 .addRemove button {
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px 5px 0;
+  font-size: 12px;
+  padding: 15px;
 }
 
 .addQuestion {
+  margin-top: 25px;
+  border-radius: 5px;
   width: 50%;
+  font-size: 12px;
+  padding: 15px;
 }
 
 .add, .addQuestion {
@@ -136,6 +173,15 @@ ul {
 
 li {
   list-style-type: none;
+  color: rgb(116, 116, 116);
+}
+
+.answerDisplay li {
+  margin-left: 25px;
+}
+
+.fa-square {
+  margin-right: 10px;
 }
 
 

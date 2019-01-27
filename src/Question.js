@@ -53,14 +53,14 @@ export default class Question extends React.Component{
             <input type="text" placeholder="Question Description" onChange={this.handleTitleChange} name="answerDesc"/>
           </form>
             {this.state.answer.map((a, index) => {
-              return <ul>
-                       <div className="option">
+              return <div className="optionList">
+                       <ul className="option">
                          <li key={index}>{a.value}</li>
                           <button onClick={(e) => this.removeAnswer(a.value)}>
                             <i class="fas fa-trash"></i>
                           </button>
-                       </div>
-                     </ul>
+                       </ul>
+                     </div>
             })}
           <form className="addOption" onSubmit={this.handleFormSubmit} autoComplete="off">
             <input type="text" placeholder="Add Option" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption} />
@@ -73,11 +73,11 @@ export default class Question extends React.Component{
   
 
         <div className="answerDisplay">
-          <h3>{this.state.answerTitle}</h3>
+          <h4>{this.state.answerTitle}</h4>
           <p>{this.state.answerDesc}</p>
           {this.state.answer.map((a, index) => {
             return <ul>
-              <li key={index}>{a.value}</li>
+              <li key={index}><i class="far fa-square"></i>{a.value}</li>
             </ul>
           })}
 

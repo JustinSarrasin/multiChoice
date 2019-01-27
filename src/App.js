@@ -56,7 +56,7 @@ class App extends Component {
             return <Question question={q} change={this.handleTitleChange} answer={this.state.answerTitle} key={index} />
           })}
         </div>
-        <button className="addQuestion" onClick={this.newQuestion}>Add Question</button>
+        <button className="addQuestion" onClick={this.newQuestion}>ADD QUESTION</button>
       </div>
     );
   }
