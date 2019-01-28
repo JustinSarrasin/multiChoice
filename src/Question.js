@@ -3,7 +3,6 @@ import React from 'react';
 export default class Question extends React.Component{
   constructor(props){
     super(props);
-
     this.state = {
       answerTitle: "",
       answerDesc: "",
@@ -13,7 +12,6 @@ export default class Question extends React.Component{
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
   
-
   handleFormSubmit = (e) => {
     e.preventDefault();
     const addAnswer = {
@@ -29,6 +27,7 @@ export default class Question extends React.Component{
   }
 
   handleTitleChange = (e) => {
+    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value,
     })
@@ -43,44 +42,42 @@ export default class Question extends React.Component{
       answer: [...newAnswerOption]
     })
   }
-
+  
   render(){
     return(
-      <div className="wrapper">
+      <div className="wrapper2">
         <div className="questionCard">
-          <form className="questionHeader" autoComplete="off">
+          <form className="questionHeader" autoComplete="off" >
             <input type="text" placeholder="Question" onChange={this.handleTitleChange} name="answerTitle"/>
             <input type="text" placeholder="Question Description" onChange={this.handleTitleChange} name="answerDesc"/>
           </form>
             {this.state.answer.map((a, index) => {
               return <div className="optionList">
-                       <ul className="option">
+                       <ul key={index} className="option">
                          <li key={index}>{a.value}</li>
                           <button onClick={(e) => this.removeAnswer(a.value)}>
-                            <i class="fas fa-trash"></i>
+                            <i className="fas fa-trash"></i>
                           </button>
                        </ul>
                      </div>
             })}
-          <form className="addOption" onSubmit={this.handleFormSubmit} autoComplete="off">
+          <form className="addOption" autoComplete="off" onSubmit={this.handleFormSubmit}>
             <input type="text" placeholder="Add Option" onChange={this.handleTitleChange} name="answerOption" value={this.state.answerOption} />
-            <div className="addRemove"> 
-              <button type="submit" className="add">ADD OPTION</button>
-              <button type="submit" className="delete">DELETE QUESTION</button>
-            </div>
           </form>
+          <div className="addRemove"> 
+            <button type="submit" className="add" onClick={this.handleFormSubmit}>ADD OPTION</button>
+            <button type="submit" className="delete" onClick={() => this.props.remove(this.props.i)} >DELETE QUESTION</button>
+          </div>
         </div>
   
-
         <div className="answerDisplay">
           <h4>{this.state.answerTitle}</h4>
           <p>{this.state.answerDesc}</p>
           {this.state.answer.map((a, index) => {
             return <ul>
-              <li key={index}><i class="far fa-square"></i>{a.value}</li>
+              <li key={index}><i className="far fa-square"></i>{a.value}</li>
             </ul>
           })}
-
         </div>
       </div>
     )

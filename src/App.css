@@ -8,8 +8,11 @@ body {
 }
 
 .wrapper {
-  /* width: 90%; */
-  /* margin: 50px auto; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper2 {
   display: flex;
   justify-content: space-between;
 }
@@ -17,8 +20,7 @@ body {
 .left, .questionCard {
   background-color: white;
   width: 49%;
-    border-radius: 5px;
-
+  border-radius: 5px;
 }
 
 .right, .answerDisplay {
@@ -30,7 +32,6 @@ body {
 }
 
 ::placeholder {
-  /* padding: 10px; */
   font-size: 15px;
 }
 
@@ -51,8 +52,6 @@ input {
   border: 1px solid lightgray;
 }
 
-
-
 h3, h4 {
   margin: 10px;
   font-size: 30px;
@@ -65,14 +64,7 @@ h4 {
 p {
   margin: 10px;
   color: rgb(116, 116, 116);
-
-  
 }
-
-
-/* h3 {
-  font-size: 2.5rem;
-} */
 
 .questionHeader {
   display: flex;
@@ -86,22 +78,11 @@ p {
   margin: -20px 20px 20px;
 }
 
-/* .questionHeader input, .addOption input {
-  margin: 5px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-} */
-
 .questionCard {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
 }
-
-/* .addOption {
-  display: flex;
-  flex-direction: column;
-} */
 
 .optionList {
   margin-bottom: 25px;
@@ -112,10 +93,6 @@ p {
   justify-content: space-between;
   margin: 0 25px;
 }
-
-/* .option li {
-  margin: -10px 0;
-} */
 
 .option i:hover {
   transform: rotate(-45deg);
@@ -128,12 +105,12 @@ button {
 
 .addRemove {
   display: flex;
-  /* margin: 5px; */
+  margin: -10px 0 20px 20px;
 }
 
 .addRemove button {
   border-radius: 5px;
-  margin: 10px 5px 0;
+  margin: 5px 5px 5px;
   font-size: 12px;
   padding: 15px;
 }
@@ -166,7 +143,6 @@ button {
   background-color: #7a2314;
 }
 
-
 ul {
   padding: 0;
 }
@@ -184,43 +160,28 @@ li {
   margin-right: 10px;
 }
 
-
-
-
-
-
-
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 775px){
+  .addRemove button {
+    border-radius: 5px;
+    margin: 5px 5px 5px;
+    font-size: 8px;
+    padding: 5px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .add, .addQuestion {
+    font-size: 8px;
+    width: 75px;
+    background-color: #39cc45;
+    color: white;
   }
-} */
 
+  .add:hover, .addQuestion:hover {
+    background-color: #25882d;
+  }
 
+  .delete {
+    width: 75px;
+    background-color: #d83f25;
+    color: white;
+  }
+}

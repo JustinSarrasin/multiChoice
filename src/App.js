@@ -9,6 +9,7 @@ class App extends Component {
       formTitle: "Title",
       formDesc: 'Form Description',
       question: [],
+      questionOption: '',
     }
   }
 
@@ -22,16 +23,26 @@ class App extends Component {
     })
   } 
   
-
   newQuestion = (e) => {
     e.preventDefault();
     const addQuestion = {
-      question: this.state.question,
+      value: this.state.questionOption,
     };
     const newQuestion = Array.from(this.state.question);
     newQuestion.push(addQuestion);
     this.setState({
-      question: newQuestion
+      question: newQuestion,
+      questionOption: ""
+    })
+  }
+
+  removeQuestion = (itemClicked, index) => {
+    let newQuestion = Array.from(this.state.question);
+    let item = itemClicked
+    let newList = newQuestion.splice(item, 1);
+
+    this.setState({
+      question: newList
     })
   }
 
@@ -53,7 +64,7 @@ class App extends Component {
         </div>
         <div className="question">
           {this.state.question.map((q, index) => {
-            return <Question question={q} change={this.handleTitleChange} answer={this.state.answerTitle} key={index} />
+            return <Question questionArray={this.state.question} change={this.handleTitleChange} answer={this.state.answerTitle} question={q} remove={this.removeQuestion} i={index} key={index}/>
           })}
         </div>
         <button className="addQuestion" onClick={this.newQuestion}>ADD QUESTION</button>
